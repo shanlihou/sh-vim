@@ -15,9 +15,9 @@ return require('packer').startup(function()
     }
     --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use { 'nvim-treesitter/nvim-treesitter'}
-	use 'Yggdroot/LeaderF'
-	use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
-	  -- nvim-cmp
+    use 'Yggdroot/LeaderF'
+    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+      -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
     use 'hrsh7th/cmp-path'     -- { name = 'path' }
@@ -29,4 +29,19 @@ return require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'
     -- lspkind
     use 'onsails/lspkind-nvim'
+    use({
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)
