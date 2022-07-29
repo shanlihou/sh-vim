@@ -89,4 +89,26 @@ pluginKeys.cmp = function(cmp)
   }
 end
 
+-- Comment
+pluginKeys.comment = function()
+    return {
+        toggler = {
+            ---Line-comment toggle keymap
+            line = '<leader>cl',
+            ---Block-comment toggle keymap
+            block = '<leader>cb',
+        },
+        ---LHS of operator-pending mappings in NORMAL + VISUAL mode
+        ---@type table
+        opleader = {
+            ---Line-comment keymap
+            line = '<leader>ca',
+            ---Block-comment keymap
+            block = '<leader>qq',
+        },
+    }
+end
+
 return pluginKeys
+
+
