@@ -13,7 +13,6 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
     }
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use { 'nvim-treesitter/nvim-treesitter'}
     use 'Yggdroot/LeaderF'
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
