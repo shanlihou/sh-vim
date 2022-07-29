@@ -13,7 +13,7 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
     }
-    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use { 'nvim-treesitter/nvim-treesitter'}
     use 'Yggdroot/LeaderF'
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
@@ -43,5 +43,11 @@ return require('packer').startup(function()
         config = function()
             require('Comment').setup()
         end
+    }
+    
+    use 'MattesGroeger/vim-bookmarks'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
 end)
