@@ -34,6 +34,9 @@ vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
+-- copy
+map("v", "<leader>y", ":OSCYank<CR>", opt)
+
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置

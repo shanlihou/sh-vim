@@ -2,6 +2,7 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use 'sainnhe/edge' -- edge 主题
+    use 'shaunsingh/nord.nvim' -- edge 主题
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
@@ -49,4 +50,5 @@ return require('packer').startup(function()
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use 'ojroques/vim-oscyank'
 end)
