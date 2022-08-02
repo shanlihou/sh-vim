@@ -9,6 +9,8 @@ require('plugin-config/buffline')
 require('plugin-config/leaderf')
 require('plugin-config/session')
 require('plugin-config/comment')
+require('plugin-config/nvim-treesitter')
+
 
 require('lsp/setup')
 require('lsp/nvim-cmp')
