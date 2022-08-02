@@ -9,7 +9,10 @@ require('plugin-config/buffline')
 require('plugin-config/leaderf')
 require('plugin-config/session')
 require('plugin-config/comment')
-require('plugin-config/nvim-treesitter')
+if (not vim.fn.has('win32'))
+then
+    require('plugin-config/nvim-treesitter')
+end
 
 
 require('lsp/setup')
