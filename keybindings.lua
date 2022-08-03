@@ -36,26 +36,31 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- copy
-map("v", "<leader>y", ":OSCYank<CR>", opt)
+if (not vim.fn.has('win32'))
+then
+    map("v", "<leader>y", ':OSCYank<CR>', opt)
+else
+    map("v", "<leader>y", '"+y', opt)
+end
 
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置
 pluginKeys.maplsp = function(mapbuf)
   -- rename
-  mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+  mapbuf('n', '<leader>gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
   -- code action
-  mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
+  mapbuf('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
   -- go xx
-  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-  mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
-  mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-  mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+  mapbuf('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+  mapbuf('n', '<leader>gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
+  mapbuf('n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
+  mapbuf('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+  mapbuf('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
   -- diagnostic
-  mapbuf('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
-  mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
-  mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
+  mapbuf('n', '<leader>go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
+  mapbuf('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
+  mapbuf('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- leader + =
   mapbuf('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
@@ -70,9 +75,9 @@ end
 pluginKeys.cmp = function(cmp)
   return {
     -- 上一个
-    ['<C-n>'] = cmp.mapping.select_prev_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
     -- 下一个
-    ['<C-p>'] = cmp.mapping.select_next_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
     ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
