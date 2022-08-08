@@ -7,7 +7,6 @@ local opt = {noremap = true}
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
 
-map("v", "<leader>y", '"+y', opt)
 map("c", "<S-Insert>", '<C-R>+', opt)
 map("i", "<S-Insert>", '<C-R>+', opt)
 map("n", "<leader>rt", ":%retab!<CR>", opt)
@@ -36,7 +35,7 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- copy
-if (not vim.fn.has('win32'))
+if (vim.fn.has('win32') == 0)
 then
     map("v", "<leader>y", ':OSCYank<CR>', opt)
 else

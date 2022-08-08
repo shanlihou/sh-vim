@@ -51,7 +51,7 @@ return require('packer').startup(function()
         config = function() require("nvim-autopairs").setup {} end
     }
 
-    if (not vim.fn.has('win32'))
+    if (vim.fn.has('win32') == 0)
     then
         use 'ojroques/vim-oscyank'
     end
