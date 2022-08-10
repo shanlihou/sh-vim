@@ -29,7 +29,7 @@ map("n", "<leader>lg", ":Telescope live_grep<CR>", opt)
 map("n", "<leader>ll", ":LeaderfLine<CR>", opt)
 map("n", "<leader>lt", ":LeaderfMru<CR>", opt)
 map("n", "<leader>la", ":Leaderf rg", opt)
-vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -w %s ", expand("<cword>"))<CR>')
+vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf rg -w %s ", expand("<cword>"))<CR>')
 
 -- bufferline
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
