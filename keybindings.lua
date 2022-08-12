@@ -105,16 +105,16 @@ pluginKeys.comment = function()
             ---Line-comment toggle keymap
             line = '<leader>cl',
             ---Block-comment toggle keymap
-            block = '<leader>cb',
+            block = 'gbc',
         },
         ---LHS of operator-pending mappings in NORMAL + VISUAL mode
         ---@type table
-        opleader = {
+        -- opleader = {
             ---Line-comment keymap
-            line = '<leader>ca',
+            -- line = '<leader>ca',
             ---Block-comment keymap
-            block = '<leader>qq',
-        },
+            -- block = '<leader>qq',
+        -- },
     }
 end
 
