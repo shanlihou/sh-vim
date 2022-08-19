@@ -1,11 +1,14 @@
+require('lsp/pyright')
+
 local lsp_installer = require "nvim-lsp-installer"
+
 
 -- 安装列表
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 -- { key: 语言 value: 配置文件 }
 local servers = {
   sumneko_lua = require "lsp.lua", -- /lua/lsp/lua.lua
-  pyright = require "lsp.pyright",
+  -- pyright = require "lsp.pyright",
   ccls = require "lsp.cpp",
 }
 

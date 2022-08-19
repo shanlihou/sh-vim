@@ -34,6 +34,8 @@ vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf rg -w %s ", expand("<cword>")
 -- bufferline
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<m-h>", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<m-l>", ":BufferLineCloseRight<CR>", opt)
 
 -- copy
 if (vim.fn.has('win32') == 0)
