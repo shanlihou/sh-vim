@@ -1,4 +1,6 @@
 require('lsp/pyright')
+require('lsp/cpp')
+vim.lsp.set_log_level("debug")
 
 local lsp_installer = require "nvim-lsp-installer"
 
@@ -9,7 +11,6 @@ local lsp_installer = require "nvim-lsp-installer"
 local servers = {
   sumneko_lua = require "lsp.lua", -- /lua/lsp/lua.lua
   -- pyright = require "lsp.pyright",
-  ccls = require "lsp.cpp",
 }
 
 -- 自动安装 LanguageServers

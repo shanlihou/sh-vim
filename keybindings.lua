@@ -37,6 +37,10 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<m-h>", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<m-l>", ":BufferLineCloseRight<CR>", opt)
 
+-- tagbar
+map("n", "<F8>", ":TagbarToggle<CR>", opt)
+
+--
 -- copy
 if (vim.fn.has('win32') == 0)
 then

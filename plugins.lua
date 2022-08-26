@@ -29,6 +29,9 @@ return require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'
     -- lspkind
     use 'onsails/lspkind-nvim'
+    use 'preservim/tagbar'
+    -- use 'vim-airline/vim-airline'
+    -- use 'vim-airline/vim-airline-themes' 
     use({
         "kylechui/nvim-surround",
         config = function()
