@@ -20,8 +20,6 @@ require('lsp/setup')
 require('lsp/nvim-cmp')
 
 
-vim.o.background = 'dark'
-vim.o.timeoutlen = 1000 -- 设置快捷键的超时时间
 vim.cmd [[
     silent! colorscheme nord
 ]]
