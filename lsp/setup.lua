@@ -3,6 +3,7 @@ require('lsp/cpp')
 vim.lsp.set_log_level("debug")
 require('lsp/clangd')
 require('lsp/rust')
+require('lsp/go')
 
 local lsp_installer = require "nvim-lsp-installer"
 
