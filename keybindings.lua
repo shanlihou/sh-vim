@@ -10,7 +10,7 @@ map("n", "<C-d>", "9j", opt)
 map("c", "<S-Insert>", '<C-R>+', opt)
 map("i", "<S-Insert>", '<C-R>+', opt)
 map("n", "<leader>rt", ":%retab!<CR>", opt)
-map("n", "<leader>re", ":%s/foo/bar/g", opt)
+map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
