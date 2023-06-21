@@ -30,6 +30,8 @@ return require('packer').startup(function()
     -- lspkind
     use 'onsails/lspkind-nvim'
     use 'preservim/tagbar'
+    use 'sheerun/vim-polyglot'
+    use 'github/copilot.vim'
     -- use 'vim-airline/vim-airline'
     -- use 'vim-airline/vim-airline-themes' 
     use({
