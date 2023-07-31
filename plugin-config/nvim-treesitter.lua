@@ -29,5 +29,3 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.wo.foldlevel = 99
 
-local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.def = "html"
