@@ -9,6 +9,9 @@ require('lsp/go')
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+require("lspconfig").lua_ls.setup {}
+require("lspconfig").pyright.setup {}
+require("lspconfig").rust_analyzer.setup {}
 -- local lsp_installer = require "nvim-lsp-installer"
 
 
