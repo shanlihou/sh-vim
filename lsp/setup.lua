@@ -5,7 +5,11 @@ require('lsp/clangd')
 require('lsp/rust')
 require('lsp/go')
 
-local lsp_installer = require "nvim-lsp-installer"
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+-- local lsp_installer = require "nvim-lsp-installer"
 
 
 -- 安装列表
@@ -18,15 +22,15 @@ local servers = {
 }
 
 -- 自动安装 LanguageServers
-for name, _ in pairs(servers) do
-  local server_is_found, server = lsp_installer.get_server(name)
-  if server_is_found then
-    if not server:is_installed() then
-      print("Installing " .. name)
-      server:install()
-    end
-  end
-end
+-- for name, _ in pairs(servers) do
+--   local server_is_found, server = lsp_installer.get_server(name)
+--   if server_is_found then
+--     if not server:is_installed() then
+--       print("Installing " .. name)
+--       server:install()
+--     end
+--   end
+-- end
 
 -- lsp_installer.on_server_ready(function(server)
 --   local opts = servers[server.name]

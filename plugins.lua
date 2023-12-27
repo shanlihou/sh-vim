@@ -16,7 +16,12 @@ return require('packer').startup(function()
     }
     use { 'nvim-treesitter/nvim-treesitter'}
     use 'Yggdroot/LeaderF'
-    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
       -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
