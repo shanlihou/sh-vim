@@ -51,6 +51,9 @@ else
     map("v", "<leader>y", '"+y', opt)
 end
 
+-- multicursors.nvim
+map('n', '<C-r>', ':MCstart<CR>', opt)
+
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置
@@ -124,6 +127,7 @@ pluginKeys.comment = function()
         },
     }
 end
+
 
 return pluginKeys
 
