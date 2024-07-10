@@ -10,6 +10,7 @@ require('plugin-config/leaderf')
 require('plugin-config/session')
 require('plugin-config/comment')
 require('plugin-config/bookmark')
+require('plugin-config/multi')
 if (vim.fn.has('win32') == 0)
 then
     require('plugin-config/nvim-treesitter')
