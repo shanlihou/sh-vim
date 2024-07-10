@@ -7,6 +7,10 @@ return require('packer').startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
     }
+    use {
+        'smoka7/multicursors.nvim',
+        requires = 'nvimtools/hydra.nvim'
+    }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use {'xolox/vim-session', requires= 'xolox/vim-misc'} --保存会话
     --use 'rmagatti/auto-session'
@@ -65,4 +69,11 @@ return require('packer').startup(function()
     then
         use 'ojroques/vim-oscyank'
     end
+
+    use {
+        'dart-lang/dart-vim-plugin',
+        'thosakwe/vim-flutter',
+        'natebosch/vim-lsc',
+        'natebosch/vim-lsc-dart'
+    }
 end)
