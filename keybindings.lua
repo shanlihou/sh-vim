@@ -3,6 +3,9 @@ vim.g.maplocalleader = "`"
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true}
 
+-- save all
+map("n", "<leader>w", ":wa<CR>", opt)
+
 -- normal
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
@@ -10,7 +13,7 @@ map("n", "<C-d>", "9j", opt)
 map("c", "<S-Insert>", '<C-R>+', opt)
 map("i", "<S-Insert>", '<C-R>+', opt)
 map("n", "<leader>rt", ":%retab!<CR>", opt)
-map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
+-- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
@@ -52,7 +55,7 @@ else
 end
 
 -- multicursors.nvim
-map('n', '<C-r>', ':MCstart<CR>', opt)
+map('n', '<leader>re', ':MCstart<CR>', opt)
 
 local pluginKeys = {}
 
