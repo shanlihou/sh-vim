@@ -20,10 +20,10 @@ map('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
 
 
 -- session
-map('n', '<leader>so', ':OpenSession', opt)
+map('n', '<leader>so', ':OpenSession ', opt)
 
 -- packer
-map('n', '<leader>ps', ':PackerSync<CR>', opt)
+-- map('n', '<leader>ps', ':PackerSync<CR>', opt)
 
 -- Telescope
 map("n", "<leader>lf", ":Telescope find_files<CR>", opt)
@@ -40,6 +40,12 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<m-h>", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<m-l>", ":BufferLineCloseRight<CR>", opt)
+local function close_all_buf()
+  vim.cmd('BufferLineCloseLeft')
+  vim.cmd('BufferLineCloseRight')
+end
+
+vim.keymap.set("n", "<leader>x", close_all_buf, { noremap = true })
 
 -- tagbar
 map("n", "<F8>", ":TagbarToggle<CR>", opt)

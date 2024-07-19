@@ -1,4 +1,5 @@
 require('basic')
+require('basic.auto_save')
 require('keybindings')
 require('plugins')
 
@@ -11,6 +12,7 @@ require('plugin-config/session')
 require('plugin-config/comment')
 require('plugin-config/bookmark')
 require('plugin-config/multi')
+require('plugin-config/hydra')
 if (vim.fn.has('win32') == 0)
 then
     require('plugin-config/nvim-treesitter')
