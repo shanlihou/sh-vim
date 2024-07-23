@@ -59,7 +59,7 @@ return require('packer').startup(function()
         end
     }
     
-    use 'MattesGroeger/vim-bookmarks'
+    -- use 'MattesGroeger/vim-bookmarks'
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
@@ -75,5 +75,10 @@ return require('packer').startup(function()
         'thosakwe/vim-flutter',
         'natebosch/vim-lsc',
         'natebosch/vim-lsc-dart'
+    }
+
+    use {
+        "LintaoAmons/bookmarks.nvim",
+        requires = 'LintaoAmons/bookmarks.nvim'
     }
 end)
