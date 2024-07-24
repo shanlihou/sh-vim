@@ -1,5 +1,5 @@
-vim.g.mapleader = "`"
-vim.g.maplocalleader = "`"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true}
 
@@ -13,6 +13,8 @@ map("n", "<C-d>", "9j", opt)
 map("c", "<S-Insert>", '<C-R>+', opt)
 map("i", "<S-Insert>", '<C-R>+', opt)
 map("n", "<leader>rt", ":%retab!<CR>", opt)
+-- 拷贝当前文件名到剪贴板
+map("n", "<leader>cn", ":let @* = expand('%:t')<CR>", opt)
 -- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
 -- nvim-tree
