@@ -15,8 +15,21 @@ map("i", "<S-Insert>", '<C-R>+', opt)
 map("n", "<leader>rt", ":%retab!<CR>", opt)
 -- 拷贝当前文件名到剪贴板
 map("n", "<leader>cn", ":let @* = expand('%:t')<CR>", opt)
+map("i", "jk", "<Esc>", opt)
 -- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
+-- copilot
+vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
+-- vim.keymap.set('i', '<C-[>', '<Plug>(copilot-previous)')
+vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
+vim.keymap.set('i', '<C-l>', '<Plug>(copilot-suggest)')
+-- vim.keymap.set('i', '<C-i>', 'copilot#Accept("\\<CR>")', {
+--   expr = true,
+--   replace_keycodes = false
+-- })
+-- vim.g.copilot_no_tab_map = true
+
+--
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
 
