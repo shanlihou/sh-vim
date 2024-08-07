@@ -1,8 +1,8 @@
 
 -- Auto-save when the window loses focus
 -- 失去焦点时自动保存
-vim.api.nvim_create_autocmd({"BufLeave"}, {
-    pattern = {"*"},
+vim.api.nvim_create_autocmd({"InsertLeave"}, {
+    pattern = {"*.py", "*.rs"},
     callback = function()
         local bufname = vim.api.nvim_buf_get_name(0) -- 获取当前缓冲区的文件名
         -- vim.print('curr buf', bufname)

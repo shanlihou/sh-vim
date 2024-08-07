@@ -39,6 +39,7 @@ vim.keymap.set({ "n", "v" }, "mo", "<cmd>BookmarksGoto<cr>", { desc = "Go to boo
 vim.keymap.set({ "n", "v" }, "ma", "<cmd>BookmarksCommands<cr>", { desc = "Find and trigger a bookmark command." })
 vim.keymap.set({ "n", "v" }, "mg", "<cmd>BookmarksGotoRecent<cr>", { desc = "Go to latest visited/created Bookmark" })
 vim.keymap.set({ "n", "v" }, "md", "<cmd>BookmarksTree<cr>", { desc = "display all the bookmarks" })
+vim.keymap.set({ "n", "v" }, "mr", "<cmd>BookmarksCalibration<cr>", { desc = "display all the bookmarks" })
 
 -- session
 map('n', '<leader>so', ':OpenSession ', opt)
