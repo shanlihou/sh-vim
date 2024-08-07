@@ -1,6 +1,6 @@
 require('lsp/pyright')
 require('lsp/cpp')
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("info")
 require('lsp/clangd')
 require('lsp/rust')
 require('lsp/go')
