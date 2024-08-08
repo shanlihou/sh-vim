@@ -8,7 +8,10 @@ end
 
 local function restore_bookmark()
   local cwd = vim.fn.getcwd()
-  require('bookmarks').api.reset_new_db_path(cwd)
+  local api = require('bookmarks').api
+  if api.reset_new_db_path ~= nil then
+    api.reset_new_db_path(cwd)
+  end
 end
 
 
