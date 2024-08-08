@@ -51,9 +51,9 @@ map('n', '<leader>so', ':Telescope session-lens<CR>', opt)
 -- Telescope
 map("n", "<leader>lf", ":Telescope find_files<CR>", opt)
 map("n", "<leader>lg", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opt)
 
 -- leaderf
-map("n", "<leader>ll", ":LeaderfLine<CR>", opt)
 map("n", "<leader>lt", ":LeaderfMru<CR>", opt)
 map("n", "<leader>la", ":Leaderf rg", opt)
 vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf rg -w %s ", expand("<cword>"))<CR>')

@@ -5,6 +5,13 @@ local function restore_nvim_tree()
   nvim_tree_api.tree.reload()
 end
 
+
+local function restore_bookmark()
+  local cwd = vim.fn.getcwd()
+  require('bookmarks').api.reset_new_db_path(cwd)
+end
+
+
 local opts = {
   auto_session_enabled = true,
   auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
@@ -17,7 +24,7 @@ local opts = {
   auto_session_use_git_branch = false,
   auto_restore_lazy_delay_enabled = true,
   log_level = 'info',
-  post_restore_cmds = {restore_nvim_tree},
+  post_restore_cmds = {restore_nvim_tree, restore_bookmark},
 }
 
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
