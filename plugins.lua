@@ -12,7 +12,15 @@ return require('packer').startup(function()
         requires = 'nvimtools/hydra.nvim'
     }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    use {'xolox/vim-session', requires= 'xolox/vim-misc'} --保存会话
+    -- use {'xolox/vim-session', requires= 'xolox/vim-misc'} --保存会话
+    use {
+        'rmagatti/auto-session',
+        config = function()
+            require("auto-session").setup {
+                auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+            }
+        end
+    }
     --use 'rmagatti/auto-session'
     use {
         'nvim-telescope/telescope.nvim',

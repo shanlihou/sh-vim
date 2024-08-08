@@ -42,7 +42,8 @@ vim.keymap.set({ "n", "v" }, "md", "<cmd>BookmarksTree<cr>", { desc = "display a
 vim.keymap.set({ "n", "v" }, "mr", "<cmd>BookmarksCalibration<cr>", { desc = "display all the bookmarks" })
 
 -- session
-map('n', '<leader>so', ':OpenSession ', opt)
+-- map('n', '<leader>so', ':SessionRestore ', opt)
+map('n', '<leader>so', ':Telescope session-lens<CR>', opt)
 
 -- packer
 -- map('n', '<leader>ps', ':PackerSync<CR>', opt)

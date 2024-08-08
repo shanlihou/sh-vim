@@ -5,10 +5,10 @@ require('plugins')
 
 -- 插件
 require('plugin-config/nvim-tree')
--- lua require('plugin-config/auto-session')
+require('plugin-config/auto-session')
 require('plugin-config/buffline')
 require('plugin-config/leaderf')
-require('plugin-config/session')
+-- require('plugin-config/session')
 require('plugin-config/comment')
 require('plugin-config/bookmark')
 require('plugin-config/multi')
