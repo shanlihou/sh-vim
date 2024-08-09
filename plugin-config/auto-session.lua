@@ -3,6 +3,7 @@ local function restore_nvim_tree()
   nvim_tree_api.tree.open()
   nvim_tree_api.tree.change_root(vim.fn.getcwd())
   nvim_tree_api.tree.reload()
+  nvim_tree_api.tree.close()
 end
 
 

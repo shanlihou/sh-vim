@@ -10,7 +10,8 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "pyright",
-    "volar"
+    "volar",
+    -- "ast-grep"
   },
 })
 
@@ -18,6 +19,18 @@ require("lspconfig").lua_ls.setup {}
 require("lspconfig").pyright.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").volar.setup {}
+require("lspconfig").dartls.setup {
+  cmd = { "dart", "language-server", "--protocol=lsp"},
+  filetypes = { "dart" },
+  init_options = {
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true,
+  },
+  -- root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
+}
 
 -- local lsp_installer = require "nvim-lsp-installer"
 
