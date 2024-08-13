@@ -13,6 +13,7 @@ require('plugin-config/comment')
 require('plugin-config/bookmark')
 require('plugin-config/multi')
 require('plugin-config/hydra')
+require('plugin-config/telescope')
 if (vim.fn.has('win32') == 0)
 then
     require('plugin-config/nvim-treesitter')
