@@ -66,7 +66,12 @@ return require('packer').startup(function()
             require('Comment').setup()
         end
     }
-    
+    use({
+        'Bekaboo/dropbar.nvim',
+        requires = {
+            'nvim-telescope/telescope-fzf-native.nvim'
+        }
+    })
     -- use 'MattesGroeger/vim-bookmarks'
     use {
         "windwp/nvim-autopairs",
