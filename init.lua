@@ -1,5 +1,5 @@
 require('basic')
-require('basic.auto_save')
+require('basic.auto_cmd')
 require('keybindings')
 require('plugins')
 
