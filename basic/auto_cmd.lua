@@ -10,7 +10,6 @@ local function save_file()
 end
 
 local function clear_end_space()
-    vim.print('hello')
     local buf = vim.api.nvim_get_current_buf()
     local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
     for i, line in ipairs(lines) do
