@@ -50,7 +50,7 @@ return require('packer').startup(function()
     use 'sheerun/vim-polyglot'
     use 'github/copilot.vim'
     -- use 'vim-airline/vim-airline'
-    -- use 'vim-airline/vim-airline-themes' 
+    -- use 'vim-airline/vim-airline-themes'
     use({
         "kylechui/nvim-surround",
         config = function()
@@ -91,7 +91,7 @@ return require('packer').startup(function()
     }
 
     use {
-        "LintaoAmons/bookmarks.nvim",
+        "shanlihou/bookmarks.nvim",
         requires = 'LintaoAmons/bookmarks.nvim'
     }
 end)
