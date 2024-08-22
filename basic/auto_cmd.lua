@@ -21,6 +21,11 @@ local function clear_end_space()
 end
 
 local function do_all()
+    local line_cnt = vim.api.nvim_buf_line_count(0)
+    if line_cnt > 1000 then
+        return
+    end
+
     local buf = vim.api.nvim_get_current_buf()
     if not vim.api.nvim_buf_get_option(buf, "modifiable") then
         return
