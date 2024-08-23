@@ -47,7 +47,7 @@ return require('packer').startup(function()
     -- lspkind
     use 'onsails/lspkind-nvim'
     use 'preservim/tagbar'
-    use 'sheerun/vim-polyglot'
+    -- use 'sheerun/vim-polyglot'
     use 'github/copilot.vim'
     -- use 'vim-airline/vim-airline'
     -- use 'vim-airline/vim-airline-themes'
@@ -83,12 +83,12 @@ return require('packer').startup(function()
         use 'ojroques/vim-oscyank'
     end
 
-    use {
-        'dart-lang/dart-vim-plugin',
-        'thosakwe/vim-flutter',
-        'natebosch/vim-lsc',
-        'natebosch/vim-lsc-dart'
-    }
+    -- use {
+    --     'dart-lang/dart-vim-plugin',
+    --     'thosakwe/vim-flutter',
+    --     'natebosch/vim-lsc',
+    --     'natebosch/vim-lsc-dart'
+    -- }
 
     use {
         "shanlihou/bookmarks.nvim",
