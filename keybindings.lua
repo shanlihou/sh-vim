@@ -19,10 +19,10 @@ map("i", "jk", "<Esc>", opt)
 -- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
 -- copilot
-vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
+--vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<C-[>', '<Plug>(copilot-previous)')
-vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
-vim.keymap.set('i', '<C-l>', '<Plug>(copilot-suggest)')
+----------------vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
+--vim.keymap.set('i', '<C-l>', '<Plug>(copilot-suggest)')
 -- vim.keymap.set('i', '<C-i>', 'copilot#Accept("\\<CR>")', {
 --   expr = true,
 --   replace_keycodes = false

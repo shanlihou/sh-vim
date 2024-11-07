@@ -48,7 +48,7 @@ return require('packer').startup(function()
     use 'onsails/lspkind-nvim'
     use 'preservim/tagbar'
     use 'sheerun/vim-polyglot'
-    use 'github/copilot.vim'
+    --use 'github/copilot.vim'
     -- use 'vim-airline/vim-airline'
     -- use 'vim-airline/vim-airline-themes'
     use({
@@ -93,5 +93,12 @@ return require('packer').startup(function()
     use {
         "shanlihou/bookmarks.nvim",
         requires = 'LintaoAmons/bookmarks.nvim'
+    }
+
+    use {
+        'luozhiya/fittencode.nvim',
+        config = function()
+            require('fittencode').setup()
+        end,
     }
 end)
