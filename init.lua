@@ -15,7 +15,7 @@ require('plugin-config/multi')
 require('plugin-config/hydra')
 require('plugin-config/telescope')
 require('plugin-config/dropbar')
-require('plugin-config/fittencode')
+require('plugin-config/fitten')
 if (vim.fn.has('win32') == 0)
 then
     require('plugin-config/nvim-treesitter')
