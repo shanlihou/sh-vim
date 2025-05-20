@@ -29,7 +29,15 @@ local opts = {
   auto_restore_lazy_delay_enabled = true,
   log_level = 'info',
   post_restore_cmds = {restore_nvim_tree, restore_bookmark},
+  auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
 }
 
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-require('auto-session').setup(opts)
+
+return {
+  'rmagatti/auto-session',
+  lazy = false,
+  config = function()
+    require('auto-session').setup(opts)
+  end
+}
