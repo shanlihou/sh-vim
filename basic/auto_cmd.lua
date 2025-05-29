@@ -48,7 +48,6 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
 })
 
 local function copy()
-    print('hello', vim.v.event.operator, ', regname:', vim.v.event.regname)
     if vim.v.event.operator == 'y' then
         if (vim.fn.has('win32') == 0) then
             require('osc52').copy_register('"')
