@@ -80,7 +80,7 @@ return require('packer').startup(function()
 
     if (vim.fn.has('win32') == 0)
     then
-        use 'ojroques/vim-oscyank'
+        use 'ojroques/nvim-osc52'
     end
 
     -- use {

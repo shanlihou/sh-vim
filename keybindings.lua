@@ -75,13 +75,12 @@ map("n", "<F8>", ":TagbarToggle<CR>", opt)
 
 --
 -- copy
-if (vim.fn.has('win32') == 0)
-then
-    map('v', '<leader>y', '<Plug>OSCYankVisual', opt)
-    -- map("v", "<leader>y", ':OSCYank<CR>', opt)
-else
-    map("v", "<leader>y", '"+y', opt)
-end
+-- if (vim.fn.has('win32') == 0)
+-- then
+--     map('v', '<leader>y', '<Plug>OSCYankVisual', opt)
+-- else
+--     map("v", "<leader>y", '"+y', opt)
+-- end
 
 -- multicursors.nvim
 map('n', '<leader>re', ':MCstart<CR>', opt)
