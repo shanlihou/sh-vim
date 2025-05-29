@@ -46,3 +46,15 @@ vim.api.nvim_create_autocmd({"InsertLeave"}, {
     callback = do_all,
     desc = "Auto-save when leaving a buffer with a name",
 })
+
+local function copy()
+    if vim.v.event.operator == 'y' then
+        if (vim.fn.has('win32') == 0) then
+            require('osc52').copy_register('"')
+        else
+            vim.fn.setreg('+', vim.fn.getreg('"'))
+        end
+    end
+end
+
+vim.api.nvim_create_autocmd('TextYankPost', {callback = copy})
