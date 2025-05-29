@@ -92,7 +92,6 @@ return require('packer').startup(function()
 
     use {
         "shanlihou/bookmarks.nvim",
-        requires = 'LintaoAmons/bookmarks.nvim'
     }
 
     use {
