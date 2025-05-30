@@ -52,6 +52,7 @@ map('n', '<leader>so', ':Telescope session-lens<CR>', opt)
 map("n", "<leader>lf", ":Telescope find_files<CR>", opt)
 map("n", "<leader>lg", ":Telescope live_grep<CR>", opt)
 map("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opt)
+map("n", "<leader>lc", ":Telescope neoclip<CR>", opt)
 
 -- leaderf
 map("n", "<leader>lt", ":LeaderfMru<CR>", opt)
