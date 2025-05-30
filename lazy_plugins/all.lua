@@ -49,7 +49,7 @@ return {
         end
     },
     {
-        "windwp/nvim-autopairs",
+        "wiwindwwindwwindwpppndwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     },
     {
@@ -59,6 +59,15 @@ return {
                 auto_calibrate_cur_buf = true,
             })
         end
+    },
+    {
+        "AckslD/nvim-neoclip.lua",
+        dependencies = {
+            {'nvim-telescope/telescope.nvim'},
+        },
+        config = function()
+            require('neoclip').setup()
+        end,
     }
 }
 
