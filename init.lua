@@ -20,7 +20,7 @@ then
 end
 
 
--- require('lsp/setup')
+require('lsp/setup')
 -- require('lsp/nvim-cmp')
 
 
