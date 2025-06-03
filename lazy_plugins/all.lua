@@ -49,8 +49,11 @@ return {
         end
     },
     {
-        "wiwindwwindwwindwpppndwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
     },
     {
         "shanlihou/bookmarks.nvim",
