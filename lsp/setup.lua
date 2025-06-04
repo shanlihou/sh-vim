@@ -5,15 +5,10 @@ require('lsp/clangd')
 require('lsp/rust')
 require('lsp/go')
 
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    "pyright",
-    "volar",
-    -- "ast-grep"
-  },
-})
+--
+-- require("mason").setup()
+-- require("mason-lspconfig").setup({
+-- })
 
 require("lspconfig").lua_ls.setup {}
 require("lspconfig").pyright.setup {}
