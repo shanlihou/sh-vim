@@ -53,9 +53,14 @@ map("n", "<leader>lf", ":Telescope find_files<CR>", opt)
 map("n", "<leader>lg", ":Telescope live_grep<CR>", opt)
 map("n", "<leader>ll", ":Telescope current_buffer_fuzzy_find<CR>", opt)
 map("n", "<leader>lc", ":Telescope neoclip<CR>", opt)
+
 vim.keymap.set("n", "<C-F>", function()
-  require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })
-end, { desc = "Grep word under cursor" })
+  local word = vim.fn.expand("<cword>")
+  require('telescope.builtin').grep_string({
+    search = "\\<" .. word .. "\\>",
+    use_regex = true,
+  })
+end, { desc = "Grep word under cursor (whole word)" })
 
 -- leaderf
 map("n", "<leader>lt", ":LeaderfMru<CR>", opt)
