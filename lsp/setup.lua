@@ -10,22 +10,14 @@ require('lsp/go')
 -- require("mason-lspconfig").setup({
 -- })
 
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").pyright.setup {}
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").volar.setup {}
-require("lspconfig").dartls.setup {
-  cmd = { "dart", "language-server", "--protocol=lsp"},
-  filetypes = { "dart" },
-  init_options = {
-    closingLabels = true,
-    flutterOutline = true,
-    onlyAnalyzeProjectsWithOpenFiles = true,
-    outline = true,
-    suggestFromUnimportedLibraries = true,
-  },
-  -- root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
-}
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('volar')
+vim.lsp.enable('dart_ls')
+vim.lsp.enable('ccls')
+vim.lsp.enable('gopls')
+
 
 -- local lsp_installer = require "nvim-lsp-installer"
 
