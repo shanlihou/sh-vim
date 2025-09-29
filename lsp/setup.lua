@@ -17,7 +17,13 @@ vim.lsp.enable('volar')
 vim.lsp.enable('dart_ls')
 vim.lsp.enable('ccls')
 vim.lsp.enable('gopls')
-
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
 
 -- local lsp_installer = require "nvim-lsp-installer"
 

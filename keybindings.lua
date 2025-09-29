@@ -43,7 +43,7 @@ vim.keymap.set({ "n", "v" }, "mr", "<cmd>BookmarksCalibration<cr>", { desc = "di
 
 -- session
 -- map('n', '<leader>so', ':SessionRestore ', opt)
-map('n', '<leader>so', ':Telescope session-lens<CR>', opt)
+--map('n', '<leader>so', ':Telescope session-lens<CR>', opt)
 
 -- packer
 -- map('n', '<leader>ps', ':PackerSync<CR>', opt)
