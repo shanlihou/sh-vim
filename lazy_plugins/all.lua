@@ -66,6 +66,15 @@ return {
             })
         end
     },
+    {
+        "shanlihou/hotreloader",
+        config = function()
+            require('nvim-python-hotloader').setup({
+                -- Configure options here
+                auto_reload = true,
+            })
+        end,
+    }
     -- {
     --     "AckslD/nvim-neoclip.lua",
     --     dependencies = {
