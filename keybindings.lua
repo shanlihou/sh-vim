@@ -3,6 +3,19 @@ vim.g.maplocalleader = "`"
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true}
 
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function(args)
+    -- 删除已有 buffer-local 的 <C-]>（如果有）
+    pcall(vim.keymap.del, 'n', '<C-]>', { buffer = args.buf })
+    -- 重新设置 buffer-local 映射，强制走 tags
+    vim.keymap.set('n', '<C-]>',
+      function() vim.cmd("silent! tag " .. vim.fn.expand("<cword>")) end,
+      { buffer = args.buf, noremap = true, silent = true })
+  end
+})
+
 -- save all
 map("n", "<leader>w", ":wa<CR>", opt)
 
@@ -19,7 +32,7 @@ map("i", "jk", "<Esc>", opt)
 -- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
 -- copilot
-vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
+--vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<C-[>', '<Plug>(copilot-previous)')
 vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
 vim.keymap.set('i', '<C-l>', '<Plug>(copilot-suggest)')
