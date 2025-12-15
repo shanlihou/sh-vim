@@ -103,24 +103,24 @@ local function do_all()
         return
     end
 
-    local line_cnt = vim.api.nvim_buf_line_count(buf)
-    if line_cnt <= 1000 then
-        clear_end_space()
-        save_file()
-        return
-    end
+    -- local line_cnt = vim.api.nvim_buf_line_count(buf)
+    -- if line_cnt <= 1000 then
+    --     clear_end_space()
+    --     save_file()
+    --     return
+    -- end
 
     -- 大文件使用异步分帧处理，每帧 500 行
-    clear_end_space_async({
-        chunk_size = 500,
-        interval_ms = 10,
-        on_done = function(b)
-            if vim.api.nvim_buf_is_valid(b) and vim.api.nvim_buf_get_option(b, "modified") then
-                -- 完成后再保存
-                pcall(function() vim.cmd("write") end)
-            end
-        end,
-    })
+    -- clear_end_space_async({
+    --     chunk_size = 500,
+    --     interval_ms = 10,
+    --     on_done = function(b)
+    --         if vim.api.nvim_buf_is_valid(b) and vim.api.nvim_buf_get_option(b, "modified") then
+    --             -- 完成后再保存
+    --             pcall(function() vim.cmd("write") end)
+    --         end
+    --     end,
+    -- })
 end
 
 -- vim.api.nvim_create_autocmd({"BufLeave"}, {
