@@ -78,8 +78,22 @@ vim.keymap.set("n", "<C-F>", function()
   })
 end, { desc = "Grep word under cursor (whole word)" })
 
+vim.keymap.set("n", "<leader>lt", function()
+  local clipboard = vim.fn.getreg("+")
+  local search_term = vim.trim(clipboard)
+
+  if search_term == "" then
+    vim.notify("剪贴板为空，无法搜索", vim.log.levels.WARN)
+    return
+  end
+
+  require('telescope.builtin').grep_string({
+    search = "\\<" .. search_term .. "\\>", -- 全词匹配
+    use_regex = true,
+  })
+end, { desc = "Telescope: 剪贴板内容全词搜索" })
+
 -- leaderf
-map("n", "<leader>lt", ":LeaderfMru<CR>", opt)
 map("n", "<leader>la", ":Leaderf rg", opt)
 --vim.cmd('noremap <C-F> :<C-U><C-R>=printf("Leaderf rg -w %s ", expand("<cword>"))<CR>')
 
