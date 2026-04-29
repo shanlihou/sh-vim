@@ -3,6 +3,9 @@ function setup()
   local cmp = require('cmp')
 
   cmp.setup {
+    completion = {
+      autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+    },
     -- 指定 snippet 引擎
     snippet = {
       expand = function(args)

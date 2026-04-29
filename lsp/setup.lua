@@ -1,65 +1,36 @@
-require('lsp/pyright')
-require('lsp/cpp')
-vim.lsp.set_log_level("error")
-require('lsp/clangd')
-require('lsp/rust')
-require('lsp/go')
+-- 1. 获取 cmp 的能力支持
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
---
--- require("mason").setup()
--- require("mason-lspconfig").setup({
--- })
-
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('pyright')
-vim.lsp.enable('rust_analyzer')
-vim.lsp.enable('volar')
-vim.lsp.enable('dart_ls')
-vim.lsp.enable('ccls')
-vim.lsp.enable('gopls')
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
+-- 2. 全局基础配置（所有 LSP 都会继承）
+vim.lsp.config('*', {
+    capabilities = capabilities,
 })
 
--- local lsp_installer = require "nvim-lsp-installer"
+-- 3. 针对特定服务器进行个性化配置（替代以前的 .setup）
+-- 例如：针对 pyright 做特殊设置
+vim.lsp.config('pyright', {
+    settings = {
+        python = {
+            analysis = { autoSearchPaths = true }
+        }
+    }
+})
 
+-- 4. 批量启用服务器
+-- 注意：这里写的是 'dartls' 而不是 'dart_ls'
+vim.lsp.enable({
+    'lua_ls', 
+    'pyright', 
+    'rust_analyzer', 
+    'volar', 
+    'dartls', -- 修正下划线问题
+    'ccls', 
+    'gopls',
+    'clangd'
+})
 
--- 安装列表
--- https://github.com/williamboman/nvim-lsp-installer#available-lsps
--- { key: 语言 value: 配置文件 }
-local servers = {
-  -- sumneko_lua = require "lsp.lua", -- /lua/lsp/lua.lua
-  -- pyright = require "lsp.pyright",
-  -- ccls = require "lsp.cpp",
-}
-
--- 自动安装 LanguageServers
--- for name, _ in pairs(servers) do
---   local server_is_found, server = lsp_installer.get_server(name)
---   if server_is_found then
---     if not server:is_installed() then
---       print("Installing " .. name)
---       server:install()
---     end
---   end
--- end
-
--- lsp_installer.on_server_ready(function(server)
---   local opts = servers[server.name]
---   if opts then
---     opts.on_attach = function(_, bufnr)
---       local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
---       -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
---       -- 绑定快捷键
---       require('keybindings').maplsp(buf_set_keymap)
---     end
---     opts.flags = {
---       debounce_text_changes = 150,
---     }
---     server:setup(opts)
---   end
--- end)
+-- 5. 诊断配置（保持不变）
+vim.diagnostic.config({
+    virtual_text = true,
+    severity_sort = true,
+})
