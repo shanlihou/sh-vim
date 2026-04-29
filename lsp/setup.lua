@@ -1,9 +1,5 @@
--- 1. 获取 cmp 的能力支持
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- 2. 全局基础配置（所有 LSP 都会继承）
 vim.lsp.config('*', {
-    capabilities = capabilities,
 })
 
 -- 3. 针对特定服务器进行个性化配置（替代以前的 .setup）
