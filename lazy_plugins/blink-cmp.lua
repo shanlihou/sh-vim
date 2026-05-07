@@ -11,7 +11,7 @@ return {
   opts = {
     -- 快捷键设置：'default' 模式非常接近 nvim-cmp，但也支持 'super-tab'
     keymap = { 
-      preset = 'default',
+      preset = 'enter',
       ['<Tab>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
     },
