@@ -31,6 +31,15 @@ map("n", "<leader>cn", ":let @* = expand('%:t')<CR>", opt)
 map("i", "jk", "<Esc>", opt)
 -- map("n", "<leader>re", ":%s/\\<foo\\>/bar/g", opt)
 
+-- gh: 高亮当前光标下的单词（大小写敏感 + 全词匹配）
+vim.keymap.set("n", "gh", function()
+  local word = vim.fn.expand("<cword>")
+  if word == "" then
+    return
+  end
+  vim.fn.setreg("/", "\\C\\<" .. word .. "\\>")
+end, { desc = "Highlight current word (case-sensitive, whole word)" })
+
 -- copilot
 --vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<C-[>', '<Plug>(copilot-previous)')
@@ -56,6 +65,14 @@ vim.keymap.set({ "n", "v" }, "ma", "<cmd>BookmarksCommands<cr>", { desc = "Find 
 vim.keymap.set({ "n", "v" }, "mg", "<cmd>BookmarksGotoRecent<cr>", { desc = "Go to latest visited/created Bookmark" })
 vim.keymap.set({ "n", "v" }, "md", "<cmd>BookmarksTree<cr>", { desc = "display all the bookmarks" })
 vim.keymap.set({ "n", "v" }, "mr", "<cmd>BookmarksCalibration<cr>", { desc = "display all the bookmarks" })
+
+
+-- yanky
+vim.keymap.set({ "n" }, "<leader>yp", "<Plug>(YankyPreviousEntry)", { desc = "" })
+vim.keymap.set({ "n" }, "<leader>yn", "<Plug>(YankyNextEntry)", { desc = "" })
+vim.keymap.set({ "n" }, "<leader>yh", function()
+  require("telescope").extensions.yank_history.yank_history({})
+end , { desc = "" })
 
 -- session
 -- map('n', '<leader>so', ':SessionRestore ', opt)

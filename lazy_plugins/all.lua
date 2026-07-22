@@ -66,7 +66,7 @@ return {
                 auto_reload = true,
             })
         end,
-    }
+    },
     -- {
     --     "AckslD/nvim-neoclip.lua",
     --     dependencies = {
@@ -80,6 +80,11 @@ return {
     --         })
     --     end,
     -- }
+    {
+        "gbprod/yanky.nvim",
+        opts = {
+        },
+    }
 }
 
 
